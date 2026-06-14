@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>OdontoBom | Sorrisos que Transformam</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1e2a3e;
+            scroll-behavior: smooth;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            z-index: 1000;
+            padding: 14px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #1F7A8C, #0F4C5F);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .logo span {
+            color: #2c9cad;
+            background: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #1e2a3e;
+            transition: 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: #1F7A8C;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.6rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #1F7A8C;
+        }
+
+        /* HERO COM IMAGEM ÚNICA */
+        .hero {
+            padding: 40px 0 50px;
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F0F5 100%);
+        }
+
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        .hero-badge {
+            background: rgba(31, 122, 140, 0.15);
+            color: #1F7A8C;
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: #0F2E38;
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+            color: #2c4b5c;
+            margin-bottom: 28px;
+            max-width: 100%;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #1F7A8C;
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(31, 122, 140, 0.25);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background: #0e5f6e;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #1F7A8C;
+            color: #1F7A8C;
+            padding: 8px 22px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: #1F7A8C10;
+            transform: translateY(-2px);
+        }
+
+        /* IMAGEM ÚNICA */
+        .hero-image-single {
+            flex: 1;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.25);
+        }
+
+        .hero-image-single img {
+            width: 100%;
+            height: auto;
+            max-height: 380px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* seções */
+        .section {
+            padding: 60px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #0F2E38;
+        }
+        .section-sub {
+            text-align: center;
+            color: #4b6a7a;
+            max-width: 650px;
+            margin: 0 auto 40px auto;
+            font-size: 1rem;
+            padding: 0 16px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 28px;
+            padding: 28px 20px;
+            transition: all 0.3s;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eef2f5;
+            text-align: center;
+        }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-icon { font-size: 2.5rem; color: #1F7A8C; margin-bottom: 16px; }
+        .service-card h3 { font-size: 1.3rem; margin-bottom: 10px; }
+        .service-card p { font-size: 0.9rem; color: #4a6272; }
+
+        .about-grid {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .about-text { flex: 1; }
+        .about-text h2 { font-size: 1.8rem; margin-bottom: 16px; }
+        .about-text p { font-size: 0.95rem; margin-bottom: 16px; }
+        .about-stats { display: flex; gap: 28px; margin-top: 24px; flex-wrap: wrap; }
+        .stat-number { font-size: 1.8rem; font-weight: 800; color: #1F7A8C; }
+        .about-img { flex: 1; border-radius: 28px; overflow: hidden; box-shadow: 0 20px 35px -8px rgba(0,0,0,0.1); }
+        .about-img img { width: 100%; height: auto; display: block; }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .testimonial-card {
+            background: #FCFEFF;
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+            border: 1px solid #e9f0f3;
+        }
+        .stars { color: #f4b942; margin-bottom: 12px; font-size: 1rem; }
+        .testimonial-text { font-size: 0.9rem; margin-bottom: 16px; line-height: 1.4; }
+
+        .contact-grid {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            background: #F5FBFD;
+            border-radius: 32px;
+            padding: 32px 24px;
+        }
+        .contact-info { flex: 1; }
+        .contact-info h3 { font-size: 1.5rem; margin-bottom: 16px; }
+        .contact-detail { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; font-size: 0.9rem; flex-wrap: wrap; }
+        .contact-detail i { width: 40px; height: 40px; background: white; border-radius: 30px; display: inline-flex; align-items: center; justify-content: center; color: #1F7A8C; font-size: 1.1rem; flex-shrink: 0; }
+        .contact-form { flex: 1; background: white; padding: 28px; border-radius: 28px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px 16px; border-radius: 28px; border: 1px solid #dce7ec; font-family: inherit; font-size: 0.9rem; }
+        .form-group input:focus, .form-group textarea:focus { border-color: #1F7A8C; outline: none; box-shadow: 0 0 0 3px rgba(31,122,140,0.2); }
+
+        footer { background: #0F2E38; color: #E0F0F5; padding: 40px 0 24px; margin-top: 40px; }
+        .footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; margin-bottom: 30px; }
+        .footer-logo { font-size: 1.6rem; font-weight: 800; background: linear-gradient(135deg,#9fd3e0,#caf0f8); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+        /* BOTÃO FLUTUANTE WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            transition: all 0.2s ease;
+            z-index: 1050;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            animation: pulse 2s infinite;
+        }
+        .whatsapp-float:hover { background-color: #128C7E; transform: scale(1.05); animation: none; }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* MODAL PEQUENO WHATSAPP - RESPONSIVO */
+        .whatsapp-modal-mini {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: white;
+            border-radius: 24px;
+            width: 300px;
+            max-width: calc(100vw - 50px);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+            z-index: 1040;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(20px) scale(0.95);
+            transition: all 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+        .whatsapp-modal-mini.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0) scale(1);
+        }
+        .whatsapp-modal-mini::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 18px;
+            border-width: 10px 10px 0 10px;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+        }
+        .modal-mini-content { padding: 16px; display: flex; align-items: center; gap: 12px; }
+        .modal-mini-icon {
+            background: #25D366;
+            width: 48px;
+            height: 48px;
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: white;
+            flex-shrink: 0;
+        }
+        .modal-mini-text { flex: 1; }
+        .modal-mini-text h4 { font-size: 0.9rem; font-weight: 800; color: #0F2E38; margin-bottom: 4px; }
+        .modal-mini-text p { font-size: 0.75rem; color: #4a6272; margin-bottom: 10px; line-height: 1.3; }
+        .modal-mini-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+        .btn-mini-whatsapp {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-mini-close {
+            background: #f1f5f9;
+            border: none;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            cursor: pointer;
+            color: #2c4b5c;
+        }
+        .modal-mini-close-x {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            background: none;
+            border: none;
+            font-size: 0.9rem;
+            cursor: pointer;
+            color: #94a3b8;
+        }
+
+        .toast-msg {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: #1F7A8C;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 60px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            z-index: 1100;
+            opacity: 0;
+            transition: 0.2s;
+            pointer-events: none;
+            text-align: center;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        .toast-msg.show { opacity: 1; }
+
+        /* ========== RESPONSIVIDADE CELULAR ========== */
+        @media (max-width: 768px) {
+            .container { padding: 0 16px; }
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                background: white;
+                padding: 20px;
+                border-radius: 24px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                margin-top: 10px;
+            }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            .hero { padding: 30px 0 40px; }
+            .hero-content h1 { font-size: 1.9rem; }
+            .hero-content p { font-size: 0.9rem; }
+            .btn-primary, .btn-outline { padding: 8px 18px; font-size: 0.85rem; }
+            .hero-image-single img { max-height: 250px; }
+            .section { padding: 40px 0; }
+            .section-title { font-size: 1.7rem; }
+            .section-sub { font-size: 0.9rem; margin-bottom: 30px; }
+            .service-card { padding: 20px 16px; }
+            .service-icon { font-size: 2rem; }
+            .service-card h3 { font-size: 1.2rem; }
+            .about-text h2 { font-size: 1.5rem; }
+            .about-stats { gap: 20px; }
+            .stat-number { font-size: 1.5rem; }
+            .contact-grid { padding: 24px 16px; gap: 28px; }
+            .contact-info h3 { font-size: 1.3rem; }
+            .contact-detail { font-size: 0.85rem; gap: 10px; }
+            .contact-form { padding: 20px; }
+            .whatsapp-float { width: 50px; height: 50px; font-size: 1.6rem; bottom: 16px; right: 16px; }
+            .whatsapp-modal-mini { bottom: 80px; right: 16px; width: 280px; }
+            .modal-mini-content { padding: 14px; gap: 10px; }
+            .modal-mini-icon { width: 42px; height: 42px; font-size: 1.4rem; }
+            .footer-grid { flex-direction: column; text-align: center; gap: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 { font-size: 1.7rem; }
+            .hero-grid { gap: 25px; }
+            .btn-group { gap: 10px; }
+            .btn-primary, .btn-outline { padding: 8px 16px; font-size: 0.8rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .about-stats { flex-direction: column; align-items: center; text-align: center; }
+            .contact-detail { flex-wrap: wrap; }
+            .whatsapp-modal-mini { width: 260px; }
+            .modal-mini-text p { font-size: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="container nav-container">
+        <div class="logo">Odonto<span>Bom</span></div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </div>
+</div>
+
+<main>
+    <!-- Hero imagem única -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-star-of-life"></i> +12 anos de excelência</div>
+                <h1>Seu sorriso, nossa maior obra-prima</h1>
+                <p>Tecnologia, conforto e um toque humano para devolver sua autoestima. Agende uma avaliação gratuita.</p>
+                <div class="btn-group">
+                    <button class="btn-primary" id="ctaAgendarWhats"><i class="fab fa-whatsapp"></i> Agende pelo WhatsApp</button>
+                    <button class="btn-outline" id="ctaConhecer">Conhecer planos</button>
+                </div>
+            </div>
+            <div class="hero-image-single">
+                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=500&fit=crop" alt="Sorriso saudável OdontoBom">
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="section">
+        <div class="container">
+            <h2 class="section-title">Tratamentos que transformam</h2>
+            <p class="section-sub">Da estética à reabilitação oral, o que há de mais moderno para seu sorriso.</p>
+            <div class="services-grid">
+                <div class="service-card"><div class="service-icon"><i class="fas fa-smile-wink"></i></div><h3>Lentes de Contato</h3><p>Feitas sob medida para um sorriso natural.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-microscope"></i></div><h3>Implantes 3D</h3><p>Cirurgia guiada por tomografia, precisa.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-teeth-open"></i></div><h3>Clareamento a Laser</h3><p>Resultado imediato e seguro.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-child"></i></div><h3>Odontopediatria</h3><p>Carinho e tecnologia para os pequenos.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-braces"></i></div><h3>Aparelhos Estéticos</h3><p>Alinhadores invisíveis e discretos.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-heartbeat"></i></div><h3>Check-up Completo</h3><p>Prevenção com equipamentos de ponta.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="section" style="background: #F8FCFE;">
+        <div class="container about-grid">
+            <div class="about-text">
+                <h2><i class="fas fa-leaf" style="color:#1F7A8C"></i> Cuidado que vai além do sorriso</h2>
+                <p>Na OdontoBom, acreditamos que um sorriso saudável transforma vidas. Nossos profissionais são especialistas apaixonados e usamos tecnologia digital em cada etapa.</p>
+                <p>Ambiente acolhedor, equipamentos de última geração e plano de cuidado personalizado.</p>
+                <div class="about-stats">
+                    <div class="stat"><div class="stat-number">+6.200</div><div>Pacientes felizes</div></div>
+                    <div class="stat"><div class="stat-number">98%</div><div>Recomendam</div></div>
+                </div>
+            </div>
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37c1a?w=600&h=450&fit=crop" alt="Clínica OdontoBom">
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="section">
+        <div class="container">
+            <h2 class="section-title">O que falam por aí</h2>
+            <p class="section-sub">Histórias reais de quem entregou o sorriso às nossas mãos.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">"Fiz clareamento e lentes, fiquei impressionada! Atendimento humanizado, nota mil."</p><div><strong>Fernanda L.</strong></div></div>
+                <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">"Implante sem dor nenhuma, e o pós-operatório foi super tranquilo. Dr. Carlos é fora de série!"</p><div><strong>Rafael M.</strong></div></div>
+                <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">"Minha filha amou a primeira consulta, a clínica é um encanto. Equipe atenciosa."</p><div><strong>Camila S.</strong></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section">
+        <div class="container contact-grid">
+            <div class="contact-info">
+                <h3><i class="fas fa-map-pin"></i> Aqui o sorriso acontece</h3>
+                <p>Av. dos Sorrisos, 1200 - Belo Horizonte/MG</p>
+                <div class="contact-detail"><i class="fas fa-phone-alt"></i> <span>(31) 8682-9559</span></div>
+                <a href="https://wa.me/553186829559?text=Olá%2C%20quero%20agendar%20minha%20avaliação%20na%20OdontoBom" target="_blank" style="text-decoration:none;">
+                    <div class="contact-detail"><i class="fab fa-whatsapp" style="background:#25D366; color:white;"></i> <span><strong>(31) 8682-9559</strong> - Fale conosco</span></div>
+                </a>
+                <div class="contact-detail"><i class="far fa-clock"></i> <span>Seg-Sex: 8h-20h | Sáb: 8h-14h</span></div>
+            </div>
+            <div class="contact-form">
+                <h3>Envie uma mensagem 💬</h3>
+                <form id="formContato">
+                    <div class="form-group"><input type="text" id="nome" placeholder="Seu nome completo" required></div>
+                    <div class="form-group"><input type="email" id="email" placeholder="Melhor e-mail" required></div>
+                    <div class="form-group"><input type="tel" id="telefone" placeholder="Seu WhatsApp"></div>
+                    <div class="form-group"><textarea rows="3" id="mensagem" placeholder="Como podemos te ajudar?"></textarea></div>
+                    <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">Enviar <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div><div class="footer-logo">OdontoBom</div><p style="margin-top: 6px;">Cuidado que abraça seu sorriso.</p></div>
+            <div><h4>Links rápidos</h4><ul style="list-style:none; margin-top: 8px;"><li><a href="#home" style="color:#CBE4EA; text-decoration:none;">Início</a></li><li><a href="#servicos" style="color:#CBE4EA; text-decoration:none;">Serviços</a></li><li><a href="#contato" style="color:#CBE4EA; text-decoration:none;">Contato</a></li></ul></div>
+            <div><h4>Redes sociais</h4><div style="display:flex; gap: 16px; margin-top: 8px;"><i class="fab fa-instagram fa-lg"></i><i class="fab fa-facebook fa-lg"></i><i class="fab fa-youtube fa-lg"></i></div></div>
+        </div>
+        <div style="text-align:center; border-top:1px solid #255a68; padding-top:20px; font-size:0.8rem;">© 2026 OdontoBom – Sorrisos que inspiram confiança.</div>
+    </div>
+</footer>
+
+<!-- Botão flutuante WhatsApp -->
+<div class="whatsapp-float" id="whatsappFloatBtn">
+    <i class="fab fa-whatsapp"></i>
+</div>
+
+<!-- MODAL PEQUENO WHATSAPP -->
+<div id="whatsappMiniModal" class="whatsapp-modal-mini">
+    <button class="modal-mini-close-x" id="closeModalXBtn">✕</button>
+    <div class="modal-mini-content">
+        <div class="modal-mini-icon"><i class="fab fa-whatsapp"></i></div>
+        <div class="modal-mini-text">
+            <h4>💬 Fale com a OdontoBom!</h4>
+            <p>Olá! Tire suas dúvidas, agende uma consulta ou peça seu plano exclusivo agora mesmo.</p>
+            <div class="modal-mini-buttons">
+                <button class="btn-mini-whatsapp" id="miniModalWhatsBtn"><i class="fab fa-whatsapp"></i> Falar agora</button>
+                <button class="btn-mini-close" id="miniModalLaterBtn">Mais tarde</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="toastMsg" class="toast-msg"></div>
+
+<script>
+    // ==================== WHATSAPP ====================
+    const whatsappNumber = "553186829559";
+    function openWhatsApp(msg = "Olá! Vim pelo site OdontoBom e gostaria de atendimento.") {
+        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+    function showToast(msg) { 
+        const toast = document.getElementById('toastMsg'); 
+        toast.textContent = msg; 
+        toast.classList.add('show'); 
+        setTimeout(() => toast.classList.remove('show'), 3500); 
+    }
+
+    // ==================== MOBILE MENU ====================
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    mobileBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+    document.querySelectorAll('.nav-links a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('active')));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const id = this.getAttribute('href');
+            if(id === "#") return;
+            const target = document.querySelector(id);
+            if(target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+        });
+    });
+
+    // Botões principais
+    document.getElementById('ctaAgendarWhats')?.addEventListener('click', () => { 
+        openWhatsApp("Olá, gostaria de agendar uma consulta na OdontoBom."); 
+        showToast("📱 Redirecionando para o WhatsApp!"); 
+    });
+    document.getElementById('ctaConhecer')?.addEventListener('click', () => { 
+        openWhatsApp("Olá! Gostaria de saber mais sobre os planos OdontoBom."); 
+        showToast("💙 Planos especiais via WhatsApp!"); 
+    });
+
+    // Formulário
+    const form = document.getElementById('formContato');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const tel = document.getElementById('telefone').value.trim();
+        const msg = document.getElementById('mensagem').value.trim();
+        if(!nome || !email) { showToast("❌ Preencha nome e e-mail."); return; }
+        if(!email.includes('@')) { showToast("📧 E-mail inválido."); return; }
+        const whatsMsg = `*NOVO CONTATO SITE*%0A%0A*Nome:* ${nome}%0A*E-mail:* ${email}%0A*Telefone:* ${tel || '-'}%0A*Mensagem:* ${msg || '-'}`;
+        window.open(`https://wa.me/${whatsappNumber}?text=${whatsMsg}`, '_blank');
+        showToast(`✨ Obrigado ${nome}! Sua mensagem foi enviada.`);
+        form.reset();
+    });
+
+    // ==================== MODAL MINI ====================
+    const modalMini = document.getElementById('whatsappMiniModal');
+    const miniModalWhatsBtn = document.getElementById('miniModalWhatsBtn');
+    const miniModalLaterBtn = document.getElementById('miniModalLaterBtn');
+    const closeModalXBtn = document.getElementById('closeModalXBtn');
+    const floatBtn = document.getElementById('whatsappFloatBtn');
+
+    function showMiniModal() { if (!modalMini.classList.contains('active')) modalMini.classList.add('active'); }
+    function hideMiniModal() { modalMini.classList.remove('active'); }
+
+    miniModalWhatsBtn.addEventListener('click', () => {
+        openWhatsApp("Olá! Gostaria de informações sobre os tratamentos da OdontoBom.");
+        hideMiniModal();
+        showToast("📱 Redirecionando para o WhatsApp!");
+    });
+    miniModalLaterBtn.addEventListener('click', hideMiniModal);
+    closeModalXBtn.addEventListener('click', hideMiniModal);
+    floatBtn.addEventListener('click', () => openWhatsApp("Olá! Vi o site OdontoBom e quero saber mais."));
+
+    setTimeout(() => { showMiniModal(); }, 5000);
+
+    document.addEventListener('click', function(event) {
+        if (modalMini.classList.contains('active')) {
+            const isInside = modalMini.contains(event.target);
+            const isOnFloat = floatBtn.contains(event.target);
+            if (!isInside && !isOnFloat) hideMiniModal();
+        }
+    });
+    modalMini.addEventListener('click', (e) => e.stopPropagation());
+
+    // ==================== ANIMAÇÕES SCROLL ====================
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if(e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.service-card, .testimonial-card, .about-text, .about-img, .contact-grid').forEach(el => { 
+        el.style.opacity = '0'; 
+        el.style.transform = 'translateY(20px)'; 
+        el.style.transition = '0.5s'; 
+        observer.observe(el); 
+    });
+</script>
+</body>
+</html>

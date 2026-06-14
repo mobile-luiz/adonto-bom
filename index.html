@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>OdontoBom </title>
+    <title>OdontoBom | Odontologia de Excelência</title>
     <!-- Google Fonts + Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -90,22 +90,22 @@
             color: #1F7A8C;
         }
 
-        /* HERO COM IMAGEM ÚNICA */
+        /* HERO - imagem ao lado no desktop, abaixo no celular */
         .hero {
-            padding: 40px 0 50px;
+            padding: 50px 0 60px;
             background: linear-gradient(135deg, #F0F9FF 0%, #E0F0F5 100%);
         }
 
         .hero-grid {
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 50px;
             flex-wrap: wrap;
         }
 
         .hero-content {
             flex: 1;
-            min-width: 260px;
+            min-width: 280px;
         }
 
         .hero-badge {
@@ -120,7 +120,7 @@
         }
 
         .hero-content h1 {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 16px;
@@ -128,7 +128,7 @@
         }
 
         .hero-content p {
-            font-size: 1rem;
+            font-size: 1.05rem;
             color: #2c4b5c;
             margin-bottom: 28px;
             max-width: 100%;
@@ -144,10 +144,10 @@
             background: #1F7A8C;
             color: white;
             border: none;
-            padding: 10px 22px;
+            padding: 12px 28px;
             border-radius: 40px;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             cursor: pointer;
             transition: all 0.3s;
             box-shadow: 0 8px 20px rgba(31, 122, 140, 0.25);
@@ -165,10 +165,10 @@
             background: transparent;
             border: 2px solid #1F7A8C;
             color: #1F7A8C;
-            padding: 8px 22px;
+            padding: 10px 28px;
             border-radius: 40px;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             cursor: pointer;
             transition: 0.3s;
         }
@@ -178,7 +178,7 @@
             transform: translateY(-2px);
         }
 
-        /* IMAGEM ÚNICA */
+        /* IMAGEM - flexível e responsiva */
         .hero-image-single {
             flex: 1;
             border-radius: 32px;
@@ -189,9 +189,14 @@
         .hero-image-single img {
             width: 100%;
             height: auto;
-            max-height: 380px;
+            max-height: 450px;
             object-fit: cover;
             display: block;
+            transition: transform 0.3s;
+        }
+
+        .hero-image-single:hover img {
+            transform: scale(1.02);
         }
 
         /* seções */
@@ -310,7 +315,7 @@
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* MODAL PEQUENO WHATSAPP - RESPONSIVO */
+        /* MODAL PEQUENO WHATSAPP */
         .whatsapp-modal-mini {
             position: fixed;
             bottom: 90px;
@@ -413,9 +418,11 @@
         }
         .toast-msg.show { opacity: 1; }
 
-        /* ========== RESPONSIVIDADE CELULAR ========== */
+        /* ========== RESPONSIVIDADE - IMAGEM ABAIXO NO CELULAR ========== */
         @media (max-width: 768px) {
             .container { padding: 0 16px; }
+            
+            /* Menu mobile */
             .nav-links {
                 display: none;
                 width: 100%;
@@ -428,19 +435,41 @@
             }
             .nav-links.active { display: flex; }
             .mobile-menu-btn { display: block; }
+            
+            /* Hero: altera ordem para imagem ficar ABAIXO do texto */
+            .hero-grid {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .hero-content {
+                order: 1;
+            }
+            .hero-image-single {
+                order: 2;
+                width: 100%;
+            }
+            
             .hero { padding: 30px 0 40px; }
-            .hero-content h1 { font-size: 1.9rem; }
-            .hero-content p { font-size: 0.9rem; }
-            .btn-primary, .btn-outline { padding: 8px 18px; font-size: 0.85rem; }
-            .hero-image-single img { max-height: 250px; }
+            .hero-content h1 { font-size: 1.9rem; text-align: center; }
+            .hero-content p { font-size: 0.95rem; text-align: center; }
+            .hero-badge { display: table; margin-left: auto; margin-right: auto; }
+            .btn-group { justify-content: center; }
+            
+            .hero-image-single img {
+                max-height: 280px;
+                width: 100%;
+                object-fit: cover;
+            }
+            
             .section { padding: 40px 0; }
             .section-title { font-size: 1.7rem; }
             .section-sub { font-size: 0.9rem; margin-bottom: 30px; }
             .service-card { padding: 20px 16px; }
             .service-icon { font-size: 2rem; }
             .service-card h3 { font-size: 1.2rem; }
-            .about-text h2 { font-size: 1.5rem; }
-            .about-stats { gap: 20px; }
+            .about-text h2 { font-size: 1.5rem; text-align: center; }
+            .about-text p { text-align: center; }
+            .about-stats { justify-content: center; gap: 20px; }
             .stat-number { font-size: 1.5rem; }
             .contact-grid { padding: 24px 16px; gap: 28px; }
             .contact-info h3 { font-size: 1.3rem; }
@@ -454,16 +483,15 @@
         }
 
         @media (max-width: 480px) {
-            .hero-content h1 { font-size: 1.7rem; }
-            .hero-grid { gap: 25px; }
+            .hero-content h1 { font-size: 1.6rem; }
+            .hero-image-single img { max-height: 240px; }
             .btn-group { gap: 10px; }
-            .btn-primary, .btn-outline { padding: 8px 16px; font-size: 0.8rem; }
+            .btn-primary, .btn-outline { padding: 8px 18px; font-size: 0.85rem; }
             .services-grid { grid-template-columns: 1fr; }
             .testimonials-grid { grid-template-columns: 1fr; }
             .about-stats { flex-direction: column; align-items: center; text-align: center; }
             .contact-detail { flex-wrap: wrap; }
             .whatsapp-modal-mini { width: 260px; }
-            .modal-mini-text p { font-size: 0.7rem; }
         }
     </style>
 </head>
@@ -484,7 +512,7 @@
 </div>
 
 <main>
-    <!-- Hero imagem única -->
+    <!-- Hero - imagem ao lado no desktop, abaixo no celular (via flex-direction column) -->
     <section id="home" class="hero">
         <div class="container hero-grid">
             <div class="hero-content">
